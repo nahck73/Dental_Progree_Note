@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Progress Notes Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; }
+        .button-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+        .button { padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        .button:hover { background-color: #0056b3; }
+        #note { margin-top: 20px; width: 80%; height: 200px; padding: 10px; }
+        .dropdown-container { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Dental Progress Notes Generator</h2>
+
+    <!-- Dropdown for EFDA/Assistant -->
+    <div class="dropdown-container">
+        <label for="assistant">Select EFDA/Assistant: </label>
+        <select id="assistant">
+            <option value="Jennifer Oliveira-Grubb">Jennifer Oliveira-Grubb</option>
+            <option value="McKenna Stout">McKenna Stout</option>
+            <option value="Darlene Daywalt">Darlene Daywalt</option>
+        </select>
+    </div>
+    
+    <!-- Procedure Buttons Container -->
+    <div class="button-container">
+        <button class="button" onclick="generateNote('Filling')">Filling</button>
+        <button class="button" onclick="generateNote('Crown Prep')">Crown Prep</button>
+        <button class="button" onclick="generateNote('Crown Delivery')">Crown Delivery</button>
+        <button class="button" onclick="generateNote('Extraction')">Extraction</button>
+        <button class="button" onclick="generateNote('Extraction and Bone Graft')">Extraction and Bone Graft</button>
+        <button class="button" onclick="generateNote('Implant Placement')">Implant Placement</button>
+        <button class="button" onclick="generateNote('Implant Placement - immediate')">Implant Placement - immediate</button>
+        <button class="button" onclick="generateNote('Implant Crown Impression')">Implant Crown Impression</button>
+        <button class="button" onclick="generateNote('Second Stage Surgery')">Second Stage Surgery</button>
+        <button class="button" onclick="generateNote('LOE')">LOE</button>
+    </div>
+    
+    <!-- Display Area for the Note -->
+    <textarea id="note" readonly>Click a procedure to see the generated note here.</textarea>
+
+    <script>
+        function generateNote(procedure) {
+            // Get today's date in the desired format
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = today.toLocaleDateString('en-US', options);
+
+            // Get selected assistant from dropdown
+            const assistant = document.getElementById('assistant').value;
+            
+            let note = '';
+            switch (procedure) {
+
+
+                case 'Filling':
+                    note = `${formattedDate}
+
+Patient presented for composite restoration. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Necessary radiographs were prescribed by the dentist prior to treatment.
+
+Verbal and/or written consent provided by the patient prior to the procedure.
+
+Blood pressure: 
+Teeth and surface restored: 
+Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules: 
+Shade of tooth: Omnichroma
+Extensive caries?: 
+
+Procedures:
+20% Benzocaine topical LA applied to injection site.  Local anesthesia was administered. Caries/existing restoration removed.  Appropriate matrix placed and wedged. Selective etch 37% H2PO4 on enamel, rinse, and blot dry. Bond applied and light-cured.  Condensed resin in light-cured increments. Finished with composite finishing burs, checked occlusion, verified contacts and polished. Post treatment instructions given. Patient tolerated procedure well. 
+
+Provider: Brian Kwon DMD
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'Crown Prep':
+                    note = `${formattedDate}
+ 
+Patient presented for crown prep. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Verbal and written consent provided by the patient prior to the procedure.
+ 
+Teeth treated: 
+Diagnosis: 
+Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules:
+Shade of tooth: 
+Build up placed: 
+Lab: Bruxzir Express
+  
+Additional notes: 
+Adequate anesthesia achieved. Routine preparation. Tooth prepped and refined. Gingival retraction cord was placed. Digital impression obtained using Itero scanner for permanent restoration. Temporary crown fabricated and cemented. POI given. Patient tolerated the procedure well. Patient left satisfied and ambulatory. 
+
+Provider: Brian Kwon DMD
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'Crown Delivery':
+                    note = `${formattedDate}
+ 
+Patient presented for crown delivery. Verbal and written consent provided by the patient prior to the procedure.
+ 
+Blood pressure: 
+Teeth: 
+Crown type: Zirconia
+  
+Additional notes:
+Crown seated, margin checked, contacts checked. Intaglio surface of crown was cleaned with Ivoclean and Z-prime. Cemented crown with 3M™ RelyX™ Luting Plus Resin Modified Glass Ionomer Cement. Removed excess and margins checked. Flossed. Occlusion checked. Patient instructed not to chew on crown side for 1 hour after crown seat. Patient left satisfied and ambulatory.
+ 
+Provider: Dr. Brian Kwon 
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'Extraction':
+                    note = `${formattedDate}
+
+Patient presented for extraction. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Necessary radiographs were prescribed by the dentist prior to treatment.
+
+Verbal and written consent provided by the patient prior to the procedure.
+
+Blood pressure: 
+Teeth extracted: 
+Local anesthetic used:4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules: 
+Type of extraction: 
+Type of sutures placed:
+  
+Additional notes: Adequate anesthesia achieved. Soft tissue management, elevation and extraction with proper forceps. Hemostasis achieved. POI given written and orally. Patient tolerated procedure well and left in good condition.
+
+Provider: Dr. Brian Kwon
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'Extraction and Bone Graft':
+                    note = `${formattedDate}
+
+Patient presented for extraction and bone graft. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Necessary radiographs were prescribed by the dentist prior to treatment.
+
+Verbal and written consent provided by the patient prior to the procedure.
+
+Blood pressure: 
+Teeth extracted: 
+Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules: 
+Type of extraction: 
+Type of sutures placed: 
+  
+Additional notes: 
+Adequate anesthesia achieved. Soft tissue management, elevation and extraction with proper forceps. Hemostasis achieved. 0.5 cc of alloOss® Natural Blend Mineralized Cortico/Cancellous Particulate 500-1000um placed in the socket and dPTFE membrane used for retention. PTFE suture placed. POI given written and orally. Patient tolerated procedure well and left in good condition.
+
+Provider: Dr. Brian Kwon
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+                
+                case 'Implant Placement':
+                        note = `${formattedDate}
+ 
+Patient presented for implant placement surgery. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Blood pressure was recorded. Necessary radiographs were prescribed by the dentist prior to treatment.
+ 
+Verbal and written consent were provided by the patient prior to the procedure.
+ 
+Blood Pressure: 
+Tooth to be replaced: 
+Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules: 
+Implant System: BioHorizons Tapered Pro
+Size of implant placed: 
+Torque (N/cm3): 
+Surgical Guide Used?: 
+ 
+Additional notes:
+ 
+Patient rinsed with CHX for 30 seconds and pre-medicated with 1g amoxicillin prior to the procedure. Sulcular incision made and FTF raised. Pilot drill used to create initial osteotomy. Drill placed and 1 PA obtained to verify angulation. Bone drills used to create appropriate osteotomy for implant. Copious saline solution used throughout the procedure. Implant placed with implant driver and torqued with wrench. Healing abutment/cover screw placed. PTFE suture placed. 
+Post op instructions given to patient. Patient to use warm salt water initially and then start CHX rinse 48 hours after surgery. Final PA and CBCT obtained of implant placement. Patient will return for post op check in two weeks.
+ 
+Provider: Dr. Brian Kwon 
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'Implant Placement - immediate':
+                        note = `${formattedDate}
+ 
+Patient presented for extraction and immediate implant placement surgery. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Blood pressure was recorded. Necessary radiographs were prescribed by the dentist prior to treatment.
+ 
+Verbal and written consent were provided by the patient prior to the procedure.
+ 
+Blood Pressure: 
+Tooth to be replaced: 
+Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules: 
+Implant System: BioHorizons Tapered Pro
+Size of implant placed: 
+Torque (N/cm3): 
+Surgical Guide Used?: 
+ 
+Additional notes:
+ 
+Patient rinsed with CHX for 30 seconds and pre-medicated with 1g amoxicillin prior to the procedure. Sulcular incision made and FTF raised. Tooth luxated and extracted atraumatically. Pilot drill used to create initial osteotomy. Par pin/drill placed and 1 PA obtained to verify angulation. Bone drills used to create appropriate osteotomy for implant. Copious saline solution used throughout the procedure. Implant placed with implant driver and torqued with wrench. Healing abutment/cover screw placed. 0.5 cc alloOss® Natural Blend Mineralized Cortico/Cancellous Particulate 500-1000um placed around the implant. Retention achieved with dPTFE membrane and PTFE suture. 
+Post op instructions given to patient. Patient to use warm salt water initially and then start CHX rinse 48 hours after surgery. Final PA and CBCT obtained of implant placement. Patient will return for post op check in two weeks.
+ 
+Provider: Dr. Brian Kwon 
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'Implant Crown Impression':
+                        note = `${formattedDate}
+
+Patient presented for implant crown impression. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Necessary radiographs were prescribed by the dentist prior to treatment.
+
+Verbal and written consent were provided by the patient prior to the procedure.
+
+Blood Pressure: 
+Tooth Number: 
+Implant Type: BioHorizons Tapered Pro
+Scan body: TruAbutment 3.5mmD / 4.5mmD
+Shade: 
+Type of crown: Zirconia
+Type of implant crown: Screwmentable
+Lab: Mr. Crown
+
+
+Additional notes: 
+
+Healing abutment was removed and scan body was placed. Digital impression obtained via iTero scanner. Healing abutment was placed back. Implant crown to be delivered next visit. 
+
+Provider: Dr. Brian Kwon
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+                case 'Second Stage Surgery':
+                        note = `${formattedDate}
+
+Patient presented for second stage surgery for implant. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Blood pressure was recorded. Necessary radiographs were prescribed by the dentist prior to treatment.
+ 
+Verbal and written consent were provided by the patient prior to the procedure.
+ 
+Blood Pressure: -
+Tooth to be replaced:
+Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
+Number of carpules: 
+Implant System: BioHorizons Tapered Pro
+ 
+Additional notes:
+ 
+Patient rinsed with CHX for 30 seconds. Minimal incision made with tissue punch bur. Overgrown bone around the implant removed and cover screw removed. Healing abutment placed. Impression to be obtained in 3 weeks. 
+ 
+Provider: Dr. Brian Kwon 
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                case 'LOE' :
+                    note = `${formattedDate}
+
+Patient presented for LOE with cc: . Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart.
+
+Provider: Brian Kwon DMD
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                default:
+                    note = 'Procedure not recognized.';
+            }
+            const noteArea = document.getElementById('note');
+            noteArea.value = note;
+
+            // Automatically select and copy the note text
+            noteArea.select();
+            document.execCommand('copy');
+            alert('Note copied to clipboard');
+        }
+    </script>
+</body>
+</html>
