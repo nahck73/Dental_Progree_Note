@@ -24,6 +24,7 @@
             <option value="McKenna Stout">McKenna Stout</option>
             <option value="Vanessa Roth">Vanessa Roth</option>
             <option value="Darlene Daywalt">Darlene Daywalt</option>
+            <option value="Rhonda Graham">Rhonda Graham</option>
         </select>
     </div>
     
@@ -34,6 +35,7 @@
         <button class="button" onclick="generateNote('Crown Delivery')">Crown Delivery</button>
         <button class="button" onclick="generateNote('Extraction')">Extraction</button>
         <button class="button" onclick="generateNote('Extraction and Bone Graft')">Extraction and Bone Graft</button>
+        <button class="button" onclick="generateNote('Implant Consult')">Implant Consult</button>
         <button class="button" onclick="generateNote('Implant Placement')">Implant Placement</button>
         <button class="button" onclick="generateNote('Implant Placement - immediate')">Implant Placement - immediate</button>
         <button class="button" onclick="generateNote('Implant Crown Impression')">Implant Crown Impression</button>
@@ -70,12 +72,12 @@ Patient presented for composite restoration. Medical history was reviewed with t
 
 Verbal and/or written consent provided by the patient prior to the procedure.
 
-Blood pressure: 
-Teeth and surface restored: 
+Blood pressure: __
+Teeth and surface restored: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
+Number of carpules: __
 Shade of tooth: Omnichroma
-Extensive caries?: 
+Extensive caries?: __
 
 Procedures:
 20% Benzocaine topical LA applied to injection site.  Local anesthesia was administered. Caries/existing restoration removed.  Appropriate matrix placed and wedged. Selective etch 37% H2PO4 on enamel, rinse, and blot dry. Bond applied and light-cured.  Condensed resin in light-cured increments. Finished with composite finishing burs, checked occlusion, verified contacts and polished. Post treatment instructions given. Patient tolerated procedure well. 
@@ -90,12 +92,12 @@ EFDA/Assistant: ${assistant}`;
  
 Patient presented for crown prep. Medical history was reviewed with the patient prior to dental treatment. Any new findings were updated in the patient's medical chart. Verbal and written consent provided by the patient prior to the procedure.
  
-Teeth treated: 
-Diagnosis: 
+Teeth treated: __
+Diagnosis: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules:
-Shade of tooth: 
-Build up placed: 
+Number of carpules: __
+Shade of tooth: __
+Build up placed: __
 Lab: Bruxzir Express
   
 Additional notes: 
@@ -111,8 +113,8 @@ EFDA/Assistant: ${assistant}`;
  
 Patient presented for crown delivery. Verbal and written consent provided by the patient prior to the procedure.
  
-Blood pressure: 
-Teeth: 
+Blood pressure: __
+Teeth: __
 Crown type: Zirconia
   
 Additional notes:
@@ -130,12 +132,12 @@ Patient presented for extraction. Medical history was reviewed with the patient 
 
 Verbal and written consent provided by the patient prior to the procedure.
 
-Blood pressure: 
-Teeth extracted: 
+Blood pressure: __
+Teeth extracted: __
 Local anesthetic used:4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
-Type of extraction: 
-Type of sutures placed:
+Number of carpules: __
+Type of extraction: __
+Type of sutures placed: __
   
 Additional notes: Adequate anesthesia achieved. Soft tissue management, elevation and extraction with proper forceps. Hemostasis achieved. POI given written and orally. Patient tolerated procedure well and left in good condition.
 
@@ -151,17 +153,27 @@ Patient presented for extraction and bone graft. Medical history was reviewed wi
 
 Verbal and written consent provided by the patient prior to the procedure.
 
-Blood pressure: 
-Teeth extracted: 
+Blood pressure: __
+Teeth extracted: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
-Type of extraction: 
-Type of sutures placed: 
+Number of carpules: __
+Type of extraction: __
+Type of sutures placed: __
   
 Additional notes: 
 Adequate anesthesia achieved. Soft tissue management, elevation and extraction with proper forceps. Hemostasis achieved. 0.5 cc of alloOss® Natural Blend Mineralized Cortico/Cancellous Particulate 500-1000um placed in the socket and dPTFE membrane used for retention. PTFE suture placed. POI given written and orally. Patient tolerated procedure well and left in good condition.
 
 Provider: Dr. Brian Kwon
+EFDA/Assistant: ${assistant}`;
+                    break;
+
+
+                    case 'Implant Consult':
+                        note = `${formattedDate}
+ 
+Patient presented for implant consultation. Medical history reviewed. CBCT/diagnostic cast obtained. Discussed the process and answered all questions. 
+
+Provider: Dr. Brian Kwon 
 EFDA/Assistant: ${assistant}`;
                     break;
 
@@ -173,14 +185,14 @@ Patient presented for implant placement surgery. Medical history was reviewed wi
  
 Verbal and written consent were provided by the patient prior to the procedure.
  
-Blood Pressure: 
-Tooth to be replaced: 
+Blood Pressure: __
+Tooth to be replaced: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
+Number of carpules: __
 Implant System: BioHorizons Tapered Pro
-Size of implant placed: 
-Torque (N/cm3): 
-Surgical Guide Used?: 
+Size of implant placed: __
+Torque (N/cm3): __
+Surgical Guide Used?: __
  
 Additional notes:
  
@@ -199,14 +211,14 @@ Patient presented for extraction and immediate implant placement surgery. Medica
  
 Verbal and written consent were provided by the patient prior to the procedure.
  
-Blood Pressure: 
-Tooth to be replaced: 
+Blood Pressure: __
+Tooth to be replaced: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
+Number of carpules: __
 Implant System: BioHorizons Tapered Pro
-Size of implant placed: 
-Torque (N/cm3): 
-Surgical Guide Used?: 
+Size of implant placed: __
+Torque (N/cm3): __
+Surgical Guide Used?: __
  
 Additional notes:
  
@@ -225,11 +237,11 @@ Patient presented for implant crown impression. Medical history was reviewed wit
 
 Verbal and written consent were provided by the patient prior to the procedure.
 
-Blood Pressure: 
-Tooth Number: 
+Blood Pressure: __
+Tooth Number: __
 Implant Type: BioHorizons Tapered Pro
 Scan body: TruAbutment 3.5mmD / 4.5mmD
-Shade: 
+Shade: __
 Type of crown: Zirconia
 Type of implant crown: Screwmentable
 Lab: Mr. Crown
@@ -249,12 +261,12 @@ EFDA/Assistant: ${assistant}`;
 
 Patient presented for implant crown delivery. Verbal and written consent provided by the patient prior to the procedure.
  
-Blood Pressure: 
-Teeth: 
+Blood Pressure: __
+Teeth: __
 Crown type: Screwmentable, Ti Custom Abutment, Zirconia
   
 Additional notes:
-Healing abutment removed and custom abutment was tried on. Margin and contact checked. 1 PA and IO photos obtained. Teflon tape packed in the screw access. Crown cemented to custom abutment with FujiCem Evolve and torque to 30 N/cm3. Patient left satisfied and ambulatory.  
+Healing abutment removed and custom abutment was tried on. Margin and contact checked. 1 PA and IO photos obtained. Teflon tape packed in the screw access. Crown cemented to custom abutment with 3M™ RelyX™ Ultimate Adhesive Resin Cement and torqued to 30 N/cm3. Patient left satisfied and ambulatory.  
  
 Provider: Brian Kwon DMD
 EFDA/Assistant: ${assistant}`;
@@ -278,10 +290,10 @@ Patient presented for second stage surgery for implant. Medical history was revi
  
 Verbal and written consent were provided by the patient prior to the procedure.
  
-Blood Pressure: -
-Tooth to be replaced:
+Blood Pressure: __
+Tooth to be replaced: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
+Number of carpules: __
 Implant System: BioHorizons Tapered Pro
  
 Additional notes:
@@ -320,13 +332,13 @@ Patient presented for endodontic treatment. Medical history was reviewed with th
  
 Verbal and written consent provided by the patient prior to the procedure.
  
-Blood pressure: 
-Teeth treated: 
+Blood pressure: __
+Teeth treated: __
 Local anesthetic used: 4% Septocaine HCl with 1:100,000 epinephrine
-Number of carpules: 
-Pulpal diagnosis: 
-Periapical diagnosis: 
-Canal length and size: 
+Number of carpules: __
+Pulpal diagnosis: __
+Periapical diagnosis: __
+Canal length and size: __
   
 Additional notes:
 Tooth isolated with rubber dam and liquid dam. Occlusal surface reduced for accurate WL measurement. Tooth accessed and WL measured with 10K file and apex locator. Canals cleaned and shaped with Protaper Gold NiTi rotary files. Canals irrigated copious NaOCl throughout the process. Canals activated with NaOCl and Endo Activator, and dried with paper points. Canals further treated with EDTA and disinfected with CHX. After thoroughly drying the canals with paper points, obturation completed with EndoSequence BC Sealer and Protaper Gold F2/F3 gutta percha. 3 PAs obtained. 
